@@ -1,0 +1,34 @@
+# JSON
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="students"></p>
+
+<script>
+
+    var object, a, b, c = "";
+    object = {
+        "name":"Lucero",
+        "lastname":"Moreno",
+        "schoolID": [
+            { "name":"Student names", "models":[ "Ali Lamb", "Raul Moreno", "John Kuo" ] },
+            { "name":"Grade", "models":[ "11", "12", "9" ] },
+            { "name":"ID number", "models":[ "43-5738", "93-5481", "38-9573" ] }
+        ]
+    }
+
+    for (a in object.schoolID) {
+        c += "<h2>" + object.schoolID[a].name + "</h2>";
+        for (b in object.schoolID[a].models) {
+            c += object.schoolID[a].models[b] + "<br>";
+        }
+    }
+
+    document.getElementById("students").innerHTML = x;
+
+</script>
+
+</body>
+</html>
