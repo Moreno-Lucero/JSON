@@ -1,0 +1,50 @@
+package JSON;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.ParseException;
+import org.json.simple.parser.JSONParser;
+
+/**
+ * Created by luceromoreno on 7/18/17.
+ */
+public class Decoding {
+
+    public static void main(String[] args){
+
+        JSONParser parser = new JSONParser();
+        String increment = "[0,{\"2\":{\"4\":{\"6\":{\"8\":[10,{\"12\":14}]}}}}]";
+
+        try{
+            Object obj = parser.parse(s);
+            JSONArray array = (JSONArray)obj;
+
+            System.out.println("We increment by two every time");
+            System.out.println(array.get(1));
+            System.out.println();
+
+            JSONObject obj2 = (JSONObject)array.get(1);
+            System.out.println("Field \"1\"");
+            System.out.println(obj2.get("1"));
+
+            increment = "[This array is pointless]";
+            obj = parser.parse(s);
+            System.out.println(obj);
+            
+            increment = "[But we chose to display random numbers]";
+            obj = parser.parse(s);
+            System.out.println(obj);
+
+            increment = "[12,,2]";
+            obj = parser.parse(s);
+            System.out.println(obj);
+            
+            increment = "[4,,8]";
+            obj = parser.parse(s);
+            System.out.println(obj);
+        }catch(ParseException pe){
+
+            System.out.println("position: " + pe.getPosition());
+            System.out.println(pe);
+        }
+    }
+}
