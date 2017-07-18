@@ -1,0 +1,72 @@
+# JSON
+package JSON;
+import org.json.simple.JSONObject;
+
+/**
+ * Created by luceromoreno on 7/18/17.
+ */
+
+//This is how you would encode JSON
+
+class Display {
+
+    public static void main(String[] args){
+        JSONObject obj = new JSONObject();
+
+        obj.put("Graduation", "April 8");
+        obj.put("number of students graduating", new Integer(680));
+        obj.put("number of majors", new Double(44));
+        obj.put("number of females", new Double(392));
+        obj.put("number of males", new Double(288));
+        obj.put("graduating with honor", new Boolean(true));
+
+        System.out.print(obj);
+    }
+
+//Bad path
+// The print line is missing, making it unable to display
+
+
+    public static void main(String[] args){
+        JSONObject obj = new JSONObject();
+
+        obj.put("Graduation", "April 8");
+        obj.put("number of students graduating", new Integer(680));
+        obj.put("number of majors", new Double(44));
+        obj.put("number of females", new Double(392));
+        obj.put("number of males", new Double(288));
+        obj.put("graduating with honor", new Boolean(true));
+
+    }
+
+
+// Bad path
+    // wrong types
+public static void main(String[] args){
+    JSONObject obj = new JSONObject();
+
+    obj.put("Graduation", "April 8");
+    obj.put("number of students graduating", new Integer(680));
+    obj.put("number of majors", new string(44));
+    obj.put("number of females", new Boolean(392));
+    obj.put("number of males", new float(288));
+    obj.put("graduating with honor", new Boolean(true));
+
+    System.out.print(obj);
+}
+
+//Bad path
+    // Syntax error, missing stuff
+    public static void main(String[] args)
+        JSONObject obj = new JSONObject();
+
+        obj.put("Graduation", "April 8");
+        obj.put("number of students graduating", new Integer(680));
+        obj.put("number of majors", new Double(44));
+        obj.put("number of females", new Double(392))
+        obj.put("number of males", new Double(288));
+        obj.put("graduating with honor", new Boolean(true))
+
+        System.out.print(obj);
+    }
+
